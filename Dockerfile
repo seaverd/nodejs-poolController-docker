@@ -1,6 +1,7 @@
 FROM node:lts as builder
+ARG TAG=next
 WORKDIR /work
-RUN npx degit tagyoureit/nodejs-poolController#next
+RUN npx degit tagyoureit/nodejs-poolController#${TAG}
 RUN npm ci
 RUN npm run build
 
