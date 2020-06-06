@@ -1,5 +1,6 @@
-FROM node:lts as builder
+FROM node:lts-alpine as builder
 ARG TAG=next
+RUN apk add --no-cache git python build-base linux-headers udev
 WORKDIR /work
 RUN npx degit tagyoureit/nodejs-poolController#${TAG}
 RUN npm ci
