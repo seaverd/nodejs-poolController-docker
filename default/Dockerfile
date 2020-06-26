@@ -1,4 +1,4 @@
-FROM node:lts-alpine as builder
+FROM alpine
 ARG TAG=next
 RUN apk add --no-cache git python build-base linux-headers udev
 WORKDIR /work
